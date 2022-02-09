@@ -8,7 +8,10 @@ export class UsersController {
   }
 
   @Post()
-  create(@Body('name') name) {
-    return name;
+  create(@Body('name') name, @Body('password') pass) {
+    return {
+      name,
+      pass,
+    };
   }
 }
