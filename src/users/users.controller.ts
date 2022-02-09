@@ -13,7 +13,10 @@ export class UsersController {
   }
 
   @Put(':id')
-  update(@Param('id') idUser: number) {
-    return idUser;
+  update(@Param('id') idUser, @Body() bodyUpdate) {
+    return {
+      idUser,
+      bodyUpdate,
+    };
   }
 }
