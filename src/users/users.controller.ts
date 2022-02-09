@@ -7,12 +7,15 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
+import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
+  constructor(private usersService: UsersService) {}
+
   @Get()
   getUsers() {
-    return 'Listando todos os usuários!!!';
+    return this.usersService.list();
   }
 
   @Post()
